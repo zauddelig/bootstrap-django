@@ -1,0 +1,38 @@
+@import "bootstrap.less";
+
+.django-form {
+  p, li {
+    &:extend(.form-group all);
+    & > *:nth-child(2) {
+      &:extend(.form-group .form-control all);
+    }
+  }
+  table {
+    //no simple solution here
+    tr {
+      &:extend(.form-group all);
+    }
+    th + td * {
+      &:extend(.form-group .form-control all);
+      &:extend(.form-control all);
+    }
+  }
+}
+.django-list-group{
+    ul{
+      &:extend(.list-group all);
+      li{
+        &:extend(.list-group .list-group-item all);
+        &:extend(.list-group-item all);
+      }
+    }
+}
+
+.django-form-inline{
+    &:extend(.form-inline all);
+
+  p,li{
+    &:extend(.form-inline .form-group all);
+    &:extend(.form-group all);
+  }
+}

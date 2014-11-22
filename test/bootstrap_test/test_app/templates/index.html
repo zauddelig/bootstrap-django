@@ -1,0 +1,72 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet/less" type="text/css" href="{% static "django.less" %}"></link>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.0.0/less.js"></script>
+        <script type="text/javascript">
+             less.env = "development";
+             less.watch();
+        </script>
+    </head>
+    <body>
+        <h1>Form Example</h1>
+        <article>
+            <h2>non-inline form</h2>
+            <div>
+                <h3>Form as P</h3>
+                <form class="django-form">
+                {{form.as_p}}
+                </form>
+            </div>
+            <div>
+                <h3>Form as Table</h3>
+                <form class="django-form">
+                <table>
+                    {{form.as_table}}
+                </table>
+                </form>
+            </div>
+            <div>
+                <h3>Form as Ul</h3>
+                <form class="django-form">
+                    <ul>
+                        {{form.as_ul}}
+                    </ul>
+                </form>
+            </div>
+            <div>
+                <h3>Form as Ul (list group)</h3>
+                <form class="django-form django-list-group">
+                    <ul>
+                        {{form.as_ul}}
+                    </ul>
+                </form>
+            </div>
+        </article>
+        <article>
+            <h2>inline forms</h2>
+            <div>
+                <h3>Form as P</h3>
+                <form class="django-form-inline">
+                    {{form.as_p}}
+                </form>
+            </div>
+            <div>
+                <h3>Form as Ul</h3>
+                <form class="django-form-inline">
+                    <ul>
+                        {{form.as_ul}}
+                    </ul>
+                </form>
+            </div>
+            <div>
+                <h3>Form as Ul (list group)</h3>
+                <form class="django-form-inline django-list-group">
+                    <ul>
+                        {{form.as_ul}}
+                    </ul>
+                </form>
+            </div>
+        </article>
+    </body>
+</hmtl>
